@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/disModEvalu.css">
+    <title>Gestion de evaluaciones</title>
+</head>
+
+<body>
+    <header id="encabezado">
+        <a href=""><img id="logo-header" src="Iconos_imagenes/logoPag.png"></a>
+        <img id="foto_perfil" src="Iconos_imagenes/descarga.png">
+        <nav>
+            <ul>
+                <li>
+                    <a href=""><img id="notificacion" src="Iconos_imagenes/IconoNotificaciones.png"></a>
+                </li>
+                <li>
+                    <a href=""><img id="cerrarSe" src="Iconos_imagenes/IconoSalir.png"></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <div id="contenido">
+        <h1 id="tit">Evaluaciones</h1>
+        <form action="gestion_evaluacion.php" method="POST">
+            <label for="NombreEva">Ingrese el nombre de la evaluación:</label>
+            <input type="text" name="nameEva"><br>
+            <label for="descripcionEva">Ingrese la descripcion de la evaluacion:</label><br>
+            <textarea name="descriEva" id="cajadetexto" cols="30" rows="10"></textarea><br><br>
+            <input type="submit" value="Guardar y continuar" id="botonEN">
+            <input type="submit" value="Cancelar" id="botonEN">
+        </form>
+    </div>
+</body>
+</html>
