@@ -17,7 +17,7 @@
                     <a href=""><img class="logito" src="IconoNotificaciones.png"></a>
                 </li>
                 <li>
-                    <a href="Index.html"><img class="logito" src="IconoSalir.png"></a>
+                    <a href="index.html"><img class="logito" src="IconoSalir.png"></a>
                 </li>
             </ul>
         </nav>
