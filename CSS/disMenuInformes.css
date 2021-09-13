@@ -5,6 +5,12 @@ body {
     background-repeat: no-repeat, repeat-y;
 }
 
+#animacion {
+    width: 100px;
+    height: 100px;
+    border: solid 2px red;
+}
+
 #logo-header {
     width: 120px;
     height: 120px;
@@ -82,9 +88,8 @@ nav ul li a:hover {
 
 div#Menu {
     margin: auto;
-    float: inline-end;
-    margin-top: 150px;
-    width: 1100px;
+    margin-top: 20px;
+    width: 800px;
 }
 
 #botonEN {

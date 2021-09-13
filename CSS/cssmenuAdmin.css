@@ -5,6 +5,36 @@ body {
     background-repeat: no-repeat, repeat-y;
 }
 
+#animacion {
+    margin-left: -1325px;
+    height: 50px;
+    width: 4000px;
+    background-color: black;
+    animation-name: animar;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+    animation-play-state: running;
+}
+
+@keyframes animar {
+    0% {
+        transform: scale(.3);
+        background-color: #D0CECE;
+        border-radius: 100%;
+    }
+    50% {
+        background-color: blue;
+    }
+    100% {
+        transform: scale(.3);
+        background-color: black;
+    }
+}
+
 #logo-header {
     width: 120px;
     height: 120px;
@@ -65,6 +95,6 @@ img.logito {
 
 div#Menu {
     margin: auto;
-    margin-top: 150px;
+    margin-top: 20px;
     width: 800px;
 }
