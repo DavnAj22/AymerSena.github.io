@@ -28,8 +28,9 @@
     </div>
 </body>
 <?php 
-$ContraseñaActual=$_POST['ContraseñaActual'];
+/*$ContraseñaActual=$_POST['ContraseñaActual'];
 $NuevaContraseña=$_POST['genero'];
 $RepetirNuevaContraseña=$_POST['RepetirNuevaContraseña'];
+*/
 ?>
 </html>
