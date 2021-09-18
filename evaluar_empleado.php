@@ -1,9 +1,16 @@
-
 <?php
-$documento = $_POST ['documentoEvaEm'];
-$pregunta1 = $_POST ['pregunta1'];
-$pregunta2 = $_POST ['pregunta2'];
-$pregunta3 = $_POST ['pregunta3'];
-
-echo "Los datos ingresados se cargaron con exito,   documento de identidad: " .$documento. " pregunta 1 " .$pregunta1. " pregunta 2 " .$pregunta2. " pregunta 3 " . $pregunta3; 
+if (isset($_POST["botonenvio"])){
+    if (!empty($_POST["documentoEvaEm"]) && strlen($_POST["documentoEvaEm"]) <=10 && is_numeric($_POST["documentoEvaEm"]) && preg_match("/[0-9]/" , $_POST["documentoEvaEm"])){
+        echo $_POST["documentoEvaEm"] . "<br/>";
+    }
+    if (!empty($_POST["pregunta1"])){
+        echo $_POST["pregunta1"] . "<br/>";
+    }
+    if (!empty($_POST["pregunta2"])){
+        echo $_POST["pregunta2"] . "<br/>";
+    }
+    if (!empty($_POST["pregunta3"])){
+        echo $_POST["pregunta3"] . "<br/>";
+    }
+}
 ?>

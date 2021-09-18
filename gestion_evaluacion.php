@@ -1,7 +1,11 @@
 <?php
-$nom_eval = $_POST ['nameEva'];
-$des_eval = $_POST ['descriEva'];
-
-echo "Los datos ingresados se cargaron con exito:   Nombre de la evaluación: " .$nom_eval. " Descripción de la evaluación " .$des_eval;
-
+if (isset($_POST["btn_guardar"]))
+{
+    if (!empty($_POST["nameEva"]) && strlen($_POST["nameEva"]) <=20 && !is_numeric($_POST["nameEva"]) && !preg_match("/[0-9]/" , $_POST["nameEva"])){
+        echo $_POST["nameEva"] . "<br/>";
+    }
+    if (!empty($_POST["descriEva"]) && strlen($_POST["descriEva"]) <=200 && !is_numeric($_POST["descriEva"]) && !preg_match("/[0-9]/" , $_POST["descriEva"])){
+        echo $_POST["descriEva"] . "<br/>";
+    }
+}
 ?>

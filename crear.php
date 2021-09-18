@@ -1,17 +1,25 @@
 <?php
-$n_pregunt = $_POST ['No_pregunta'];
-$pregunta1 = $_POST ['pregunta1'];
-$pregunta2 = $_POST ['pregunta2'];
-$pregunta3 = $_POST ['pregunta3'];
-$pregunta4 = $_POST ['pregunta4'];
-$pregunta5 = $_POST ['pregunta5'];
-$pregunta6 = $_POST ['pregunta6'];
-
-echo "Número de preguntas".$n_pregunt.'<br>';
-echo "Pregunta No. 1 ".$pregunta1.'<br>';
-echo "Pregunta No. 2 ".$pregunta2.'<br>';
-echo "Pregunta No. 3 ".$pregunta3.'<br>';
-echo "Pregunta No. 4 ".$pregunta4.'<br>';
-echo "Pregunta No. 5 ".$pregunta5.'<br>';
-echo "Pregunta No. 6 ".$pregunta6.'<br>';
+if (isset($_POST["boton"])){
+    if (!empty($_POST["No_pregunta"]) && strlen($_POST["No_pregunta"]) <=2 && is_numeric($_POST["No_pregunta"]) && preg_match("/[0-9]/" , $_POST["No_pregunta"])){
+        echo $_POST["No_pregunta"] . "<br/>";
+    }
+    if (!empty($_POST["pregunta1"]) && strlen($_POST["pregunta1"]) <=200 && !is_numeric($_POST["pregunta1"]) && !preg_match("/[0-9]/" , $_POST["pregunta1"])){
+        echo $_POST["pregunta1"] . "<br/>";
+    }
+    if (!empty($_POST["pregunta2"]) && strlen($_POST["pregunta2"]) <=200 && !is_numeric($_POST["pregunta2"]) && !preg_match("/[0-9]/" , $_POST["pregunta2"])){
+        echo $_POST["pregunta2"] . "<br/>";
+    }    
+    if (!empty($_POST["pregunta3"]) && strlen($_POST["pregunta3"]) <=200 && !is_numeric($_POST["pregunta3"]) && !preg_match("/[0-9]/" , $_POST["pregunta3"])){
+        echo $_POST["pregunta3"] . "<br/>";
+    }
+    if (!empty($_POST["pregunta4"]) && strlen($_POST["pregunta4"]) <=200 && !is_numeric($_POST["pregunta4"]) && !preg_match("/[0-9]/" , $_POST["pregunta4"])){
+        echo $_POST["pregunta4"] . "<br/>";
+    }
+    if (!empty($_POST["pregunta5"]) && strlen($_POST["pregunta5"]) <=200 && !is_numeric($_POST["pregunta5"]) && !preg_match("/[0-9]/" , $_POST["pregunta5"])){
+        echo $_POST["pregunta5"] . "<br/>";
+    }
+    if (!empty($_POST["pregunta6"]) && strlen($_POST["pregunta6"]) <=200 && !is_numeric($_POST["pregunta6"]) && !preg_match("/[0-9]/" , $_POST["pregunta6"])){
+        echo $_POST["pregunta6"] . "<br/>";
+    }
+}
 ?>

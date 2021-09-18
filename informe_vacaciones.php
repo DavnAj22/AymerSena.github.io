@@ -1,12 +1,17 @@
-
 <?php
-$filtro_empleado = $_POST ['ftl'];
-$inicio_cal_vac = $_POST ['IniCalVac'];
-$fin_cal_vac = $_POST ['FinCalVac'];
 
-
-echo "Los datos para filtrar la información son : " .$filtro_empleado. '<br>';
-echo " Fecha de inicio " .$inicio_cal_vac.'<br>';
-echo " Fecha final  " .$fin_cal_vac.'<br>';
-
+if (isset($_POST["btn_consulta"])){
+    if (!empty($_POST["ftl"])){
+        echo $_POST["ftl"] . "<br/>";
+    }
+    if (!empty($_POST["IniCalVac"])){
+        echo $_POST["IniCalVac"] . "<br/>";
+    }
+    if (!empty($_POST["ini_cal"])){
+        echo $_POST["ini_cal"] . "<br/>";
+    }
+    if (!empty($_POST["FinCalVac"])){
+        echo $_POST["FinCalVac"] . "<br/>";
+    }
+}
 ?>

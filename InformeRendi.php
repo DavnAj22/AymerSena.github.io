@@ -1,13 +1,16 @@
-
 <?php
-$filtro_empl = $_POST ['ftl_empl'];
-$filtro_eval = $_POST ['ftl_eval'];
-$ini_cal = $_POST ['ini_cal'];
-$fin_cal = $_POST ['fin_cal'];
-
-echo "Los datos ingresados se cargaron con exito,   Filtro por empleado: " .$filtro_empl.'<br>';
-echo "Filtro por evaluación: " .$filtro_eval.'<br>';
-echo "Fecha de Inicio: " .$ini_cal.'<br>';
-echo "Fecha de Finalización: " .$fin_cal.'<br>';
-
+if (isset($_POST["btn_consulta"])){
+    if (!empty($_POST["ftl_empl"])){
+        echo $_POST["ftl_empl"] . "<br/>";
+    }
+    if (!empty($_POST["ftl_eval"])){
+        echo $_POST["ftl_eval"] . "<br/>";
+    }
+    if (!empty($_POST["ini_cal"])){
+        echo $_POST["ini_cal"] . "<br/>";
+    }
+    if (!empty($_POST["fin_cal"])){
+        echo $_POST["fin_cal"] . "<br/>";
+    }
+}
 ?>
