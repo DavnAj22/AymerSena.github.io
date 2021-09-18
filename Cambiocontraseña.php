@@ -25,11 +25,11 @@
     </header>
     <section id="cambiocontraseña">
         <h1>Cambio de contraseña</h1>
-        <form method="POST">
-            <input type="text" placeholder="Contraseña Actual" name="ContraseñaActual"><br><br><br>
-            <input type="text" placeholder="Nueva Contraseña" name="NuevaContraseña"><br><br><br>
-            <input type="text" placeholder="Repetir nueva contraseña" name="RepetirNuevaContraseña"><br><br><br>
-            <button type="submit" name="CambiarContraseña">Cambiar contraseña</button>
+        <form action="CambiocontraseñaValida.php" method="POST">
+            <input type="text" placeholder="Contraseña Actual" name="ContraseñaActual"><br><br>
+            <input type="text" placeholder="Nueva Contraseña" name="NuevaContraseña"><br><br>
+            <input type="text" placeholder="Repetir nueva contraseña" name="RepetirNuevaContraseña"><br><br>
+            <button id=boton type="submit" name="CambiarContraseña">Cambiar contraseña</button>
         </form>
     </section>
 </body>
