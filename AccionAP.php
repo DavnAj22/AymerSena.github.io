@@ -1,17 +1,27 @@
 <?php
-$empleado= $_GET['empleados'];
-$areas=$_GET['areas'];
+if (isset($_POST["enviar"])){
+    if(!empty($_POST["empleados"]) && !is_numeric($_POST["empleados"])) {
 
-$date=$_GET['date'];
-
-
-echo "el empleado ".$empleado." le han sido asignadas sus vacaciones"."</br>";
-
-echo "le corresponden 15 dias acumulados"."</br>";
-
-echo "Su fecha de regreso es: ".$date."</br>";
+        echo "el empleado  ".($_POST["empleados"])." le han sido asignadas sus vacaciones "."<br/>";
 
 
-echo "area filtrada: ".$areas;
+    }
+
+    if (!empty($_POST["areas"]) && !is_numeric($_POST["areas"])){
+        echo " pertenece al area " .$_POST["areas"]."<br/>";
+    }
+
+    if(!empty($_POST["date"])) {
+
+        echo "fecha de regreso: ".($_POST["date"])."<br/>";
+        echo "le corresponden 15 dias acumulador"."<br/>";
+
+
+
+    }
+
+
+
+}
 
 ?>  

@@ -1,9 +1,17 @@
 <?php
-$empleado= $_GET['empleados'];
-$textarea=$_GET['textarea'];
 
-echo "el empleado ".$empleado." ha sido cargado y le corresponden 15 dias acumulados"."</br>";
+if (isset($_POST["enviar"])){
+    if(!empty($_POST["empleados"]) && !is_numeric($_POST["empleados"])) {
 
-echo $textarea;
+        echo "El empleado ".($_POST["empleados"])." ha sido seleccionado "."<br/>";
+
+
+    }
+
+    if (!empty($_POST["textarea"]) && strlen($_POST["textarea"]) <=50 && !is_numeric($_POST["textarea"])){
+        echo "Comentario: ". $_POST["textarea"] . "<br/>";
+    }
+
+}
 
 ?>  

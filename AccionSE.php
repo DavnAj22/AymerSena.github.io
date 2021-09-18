@@ -1,10 +1,13 @@
 <?php
-$date=$_GET['date'];
+if (isset($_POST["date"])){
 
-echo "Solicitud cargada, recuerde su fecha de partida es: ".$date."</br>";
+    if(!empty($_POST["date"])) {
 
-echo "Dias acumulados: 15 ";
+        echo "fecha de partida: ".($_POST["date"])."<br/>";
+        echo "le corresponden 15 dias acumulador"."<br/>";
+        echo "La empresa le desea felices vacaciones"."<br/>";
 
-
+    }
+}
 
 ?>  
