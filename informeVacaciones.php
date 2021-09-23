@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,12 +27,21 @@
     </header>
     <br>
     <div id="Post">
-        <form action="informe_vacaciones.php" method="POST">
+    
+        <form method="POST">
             <label for="empleado">Empleado</label>
-            <select name="ftl" id="filtros">
-                    <option value="Todos los del área">Todos los del área</option>
-                    <option value="Pepito Perez">Pepito Perez</option>
-                    <option value="Mara Sandoval">Mara Sandoval</option>
+            <select name="ftl" id="filtros" >
+                <option value="todos">Todos</option>
+                    <?php
+                    require("conexionBD.php");// Para llamar la conexion de la base de datos.
+                    $sql = "SELECT UsuCedula, UsuNombre ,UsuApellido FROM tblusuario";
+                    $resultado = $conexion ->query($sql);
+                    foreach($resultado as $num_rows){
+                    ?>    
+                      <option value="<?php print $num_rows['UsuCedula'];?>"><?php echo $num_rows['UsuNombre']." " .$num_rows['UsuApellido'];?></option>
+                     <?php     
+                    }
+                    ?>
                 </select>
             <label for="inicioCalendarioVacas">Rango de fecha incio</label>
             <input type="date" name="IniCalVac">
@@ -45,6 +55,29 @@
                     <td>fecha fin</td>
                     <td>Estado</td>
                 </tr>
+<?php
+ $documento=$_POST['ftl'];
+ if($documento=="todos"){
+     $sql1="SELECT * FROM tblhistovaca";
+     $resultado1=$conexion ->query($sql1);
+     foreach($resultado1 as $rows){
+         ?>
+         <tr>
+         <td>enlazar al empleado </td>
+         <td><?php echo $rows['HisFechaSolicitud'];?></td>
+         <td><?php echo $rows['HisFechaInicio'];?></td>
+         <td><?php echo $rows['HisFechaRegreso'];?></td>
+         <td><?php echo $rows['HisEstado'];?></td>
+         </tr>
+         <?php
+     }
+     ?>
+     <?php
+ }else{
+     $enlacetblhistorvaca="SELECT SolCodigo FROM tblsolivaca WHERE SolForUsuario=$documento";
+     $sql1="SELECT * FROM tblhistovaca WHERE HisForSoliciva=$enlacetblhistorvaca";
+ }
+?>
                 <tr>
                     <td>Pepito Perez</td>
                     <td>20210901</td>
@@ -68,12 +101,13 @@
                 </tr>
             </table>
             <br>
-            <input type="submit" value="Consultar" id="botonEN">
+            <input type="submit" value="Consultar" id="botonEN" name="btn_consulta">
             <input type="submit" value="Imprimir" id="botonEN">
         </form>
+        <?php
+        echo $documento;
+        ?>
     </div>
-
     </div>
 </body>
-
 </html>
