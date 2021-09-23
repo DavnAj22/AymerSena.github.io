@@ -43,10 +43,8 @@
                     }
                     ?>
                 </select>
-            <label for="inicioCalendarioVacas">Rango de fecha incio</label>
-            <input type="date" name="IniCalVac">
-            <label for="finCalendarioVacas">Rango de fecha fin</label>
-            <input type="date" name="FinCalVac"><br>
+            <label for="fechaSolicitud">Fecha de solicitud vacaciones</label>
+            <input type="date" name="DataSolicid">
             <table id="tablaResu" border="1">
                 <tr>
                     <td>Empleado</td>
@@ -56,14 +54,15 @@
                     <td>Estado</td>
                 </tr>
 <?php
- $documento=$_POST['ftl'];
- if($documento=="todos"){
-     $sql1="SELECT * FROM tblhistovaca";
-     $resultado1=$conexion ->query($sql1);
+/*$documento=$_POST["ftl"];
+echo $documento;*/
+if (empty($_POST["ftl"]) and empty($_POST["DataSolcid"])){
+     $sql1="SELECT his.HisFechaSolicitud, his.HisFechaInicio, his.HisFechaRegreso, his.HisEstado, usu.UsuNombre, usu.UsuApellido FROM tblhistovaca his INNER JOIN tblusuario usu ON his.HisForUsuCed=usu.UsuCedula";
+     $resultado1=$conexion ->query($sql1);     
      foreach($resultado1 as $rows){
          ?>
          <tr>
-         <td>enlazar al empleado </td>
+         <td><?php echo $rows['UsuNombre']. ' '.$rows['UsuApellido'];?></td>
          <td><?php echo $rows['HisFechaSolicitud'];?></td>
          <td><?php echo $rows['HisFechaInicio'];?></td>
          <td><?php echo $rows['HisFechaRegreso'];?></td>
@@ -74,39 +73,19 @@
      ?>
      <?php
  }else{
+     /*
      $enlacetblhistorvaca="SELECT SolCodigo FROM tblsolivaca WHERE SolForUsuario=$documento";
      $sql1="SELECT * FROM tblhistovaca WHERE HisForSoliciva=$enlacetblhistorvaca";
+     */
+    echo "filtrado";
  }
 ?>
-                <tr>
-                    <td>Pepito Perez</td>
-                    <td>20210901</td>
-                    <td>20210910</td>
-                    <td>20210925</td>
-                    <td>Aprobado</td>
-                </tr>
-                <tr>
-                    <td>Mara Sandoval</td>
-                    <td>20211001</td>
-                    <td>20211010</td>
-                    <td>20210925</td>
-                    <td>Rechazada</td>
-                </tr>
-                <tr>
-                    <td>Mara Sandoval</td>
-                    <td>20201001</td>
-                    <td>20201010</td>
-                    <td>20200925</td>
-                    <td>Aprobado</td>
-                </tr>
             </table>
             <br>
             <input type="submit" value="Consultar" id="botonEN" name="btn_consulta">
             <input type="submit" value="Imprimir" id="botonEN">
         </form>
-        <?php
-        echo $documento;
-        ?>
+
     </div>
     </div>
 </body>
