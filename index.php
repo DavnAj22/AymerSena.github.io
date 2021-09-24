@@ -21,6 +21,7 @@
             <input type="password" placeholder="Contrasena" name="Contrasena"><br><br>
             <button id="boton" type="submit" name="Iniciarsesion">Iniciar sesión</button><br><br>
             <p>Restablecer contraseña</p>
+        
         </form>
     </section>
 </body>
@@ -44,12 +45,15 @@ if (isset($_POST['Iniciarsesion'])) {
                 switch ($rows["UsuForaPerfil"]) {
                     case 1:
                         include("menuAdministrador.php");
+                        $menu="menuAdministrador.php";
                         break;
                     case 2:
                         include("menuJefe.php");
+                        $menu="menuJefe.php";
                         break;
                     case 3:
                         include("menuEmpleado.php");
+                        $menu="menuEmpleado.php";
                         break;
 
                     default:
@@ -63,5 +67,4 @@ if (isset($_POST['Iniciarsesion'])) {
     }
 }
 ?>
-
 </html>
