@@ -24,6 +24,11 @@
         
         </form>
     </section>
+    <h2>Enlaces rapidos a los menus temporal</h2>
+    <a href="menuAdministrador.php">Menu Administrador</a><br>
+    <a href="menuJefe.php">Menu Jefe</a><br>
+    <a href="menuEmpleado.php">Menu Empleado </a><br>
+
 </body>
 <?php
 require("conexionBD.php");
