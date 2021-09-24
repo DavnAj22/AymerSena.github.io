@@ -73,12 +73,11 @@ if (empty($_POST["ftl"]) and empty($_POST["DataSolcid"])){
      ?>
      <?php
  }else{
-     /*
-     $enlacetblhistorvaca="SELECT SolCodigo FROM tblsolivaca WHERE SolForUsuario=$documento";
-     $sql1="SELECT * FROM tblhistovaca WHERE HisForSoliciva=$enlacetblhistorvaca";
-     */
-    echo "filtrado";
- }
+    $sql1="SELECT his.HisFechaSolicitud, his.HisFechaInicio, his.HisFechaRegreso, his.HisEstado, usu.UsuNombre, usu.UsuApellido FROM tblhistovaca his INNER JOIN tblusuario usu ON his.HisForUsuCed=usu.UsuCedula";
+    $resultado1=$conexion ->query($sql1);
+    
+     }
+
 ?>
             </table>
             <br>

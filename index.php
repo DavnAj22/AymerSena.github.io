@@ -15,9 +15,9 @@
     </header>
     <section id="Login">
         <h1>Inicio de sesión</h1>
-        <form action="Indexphp.php" method="POST">
+        <form  method="POST">
             <input type="text" placeholder="Usuario" name="Usuario"><br><br>
-            <input type="password" placeholder="Contraseña" name="Contraseña"><br><br>
+            <input type="password" placeholder="Contrasena" name="Contrasena"><br><br>
             <button id="boton" type="submit" name="Iniciarsesion">Iniciar sesión</button><br><br>
             <p>Restablecer contraseña</p>
         </form>
@@ -30,6 +30,20 @@
             <li><a href="conexionBD.php">Validar la conexion a la base de datos</a></li>
         </ul>
     </div>
+    <?php
+        require("conexionBD.php");
+        if(isset($_POST['Iniciarsesion'])){
+            $docu=$_POST['Usuario'];
+            $contra=$_POST['Contrasena'];
+            echo $docu. ' ' . $contra;
+            $sql="SELECT * FROM tblusuario WHERE UsuCedula='$docu'";
+            $resultado= $conexion->query($sql);
+            foreach($resultado as $rows){
+            echo ' '. $rows['UsuContrasenaSis'];
+            
+        }
+        }
+    ?>
 </body>
 
 </html>

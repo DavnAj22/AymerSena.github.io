@@ -55,6 +55,10 @@
 
             <input type="date" name="date" id="date">
 
+            <h3>Ingrese fecha de solicitud</h3>
+          
+            <input type="date" name="dated" id="dated" >
+
         </form>
         <br>
 
