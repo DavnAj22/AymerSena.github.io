@@ -14,36 +14,54 @@
         <img id="logo-header" src="https://1.bp.blogspot.com/-CRGFBvE8s8k/YT5yRhIEj8I/AAAAAAAAAHM/dplt4qgxJmcjfSP213rWRyF0EoW_BQlSACNcBGAsYHQ/s320/logoPag.png">
     </header>
     <section id="Login">
+        <br>
         <h1>Inicio de sesión</h1>
-        <form  method="POST">
+        <form method="POST">
             <input type="text" placeholder="Usuario" name="Usuario"><br><br>
             <input type="password" placeholder="Contrasena" name="Contrasena"><br><br>
             <button id="boton" type="submit" name="Iniciarsesion">Iniciar sesión</button><br><br>
             <p>Restablecer contraseña</p>
         </form>
-    </section><br><br>
-    <div id="Enlaces">
-        <ul>
-            <li><a href="menuAdministrador.html">Login como administrador</a></li>
-            <li><a href="menuEmpleado.html">Login como empleado</a></li>
-            <li><a href="menuJefe.html">Login como jefe</a></li>
-            <li><a href="conexionBD.php">Validar la conexion a la base de datos</a></li>
-        </ul>
-    </div>
-    <?php
-        require("conexionBD.php");
-        if(isset($_POST['Iniciarsesion'])){
-            $docu=$_POST['Usuario'];
-            $contra=$_POST['Contrasena'];
-            echo $docu. ' ' . $contra;
-            $sql="SELECT * FROM tblusuario WHERE UsuCedula='$docu'";
-            $resultado= $conexion->query($sql);
-            foreach($resultado as $rows){
-            echo ' '. $rows['UsuContrasenaSis'];
-            
-        }
-        }
-    ?>
+    </section>
 </body>
+<?php
+require("conexionBD.php");
+if (isset($_POST['Iniciarsesion'])) {
+    $docu = $_POST['Usuario'];
+    $contra = $_POST['Contrasena'];
+    if (isset($_POST["Usuario"])) {
+        if (!empty($_POST["Usuario"]) && strlen($_POST["Usuario"]) <= 15 && is_numeric($_POST["Usuario"]) && !preg_match("/[0-9]/", $_POST["Usuario"])) {
+        }
+    }
+    if (!empty($_POST["Contrasena"])) {
+    }
+    $sql = "SELECT * FROM tblusuario WHERE UsuCedula='$docu'";
+    $resulpassword = $conexion->query($sql);
+    foreach ($resulpassword as $rows) {
+        if ($rows['UsuContrasenaSis'] == $contra) {
+            $resulperfil = $conexion->query($sql);
+            foreach ($resulperfil as $rows) {
+                switch ($rows["UsuForaPerfil"]) {
+                    case 1:
+                        include("menuAdministrador.php");
+                        break;
+                    case 2:
+                        include("menuJefe.php");
+                        break;
+                    case 3:
+                        include("menuEmpleado.php");
+                        break;
+
+                    default:
+                        echo "No perfil";
+                        break;
+                }
+            }
+        } else {
+            echo "Credenciales incorrectas";
+        }
+    }
+}
+?>
 
 </html>
