@@ -24,10 +24,6 @@
         
         </form>
     </section>
-    <h2>Enlaces rapidos a los menus temporal</h2>
-    <a href="menuAdministrador.php">Menu Administrador</a><br>
-    <a href="menuJefe.php">Menu Jefe</a><br>
-    <a href="menuEmpleado.php">Menu Empleado </a><br>
 
 </body>
 <?php
@@ -49,15 +45,15 @@ if (isset($_POST['Iniciarsesion'])) {
             foreach ($resulperfil as $rows) {
                 switch ($rows["UsuForaPerfil"]) {
                     case 1:
-                        include("menuAdministrador.php");
+                        header("Location: menuAdministrador.php");
                         $menu="menuAdministrador.php";
                         break;
                     case 2:
-                        include("menuJefe.php");
+                        header("Location: menuJefe.php");
                         $menu="menuJefe.php";
                         break;
                     case 3:
-                        include("menuEmpleado.php");
+                        header("Location: menuEmpleado.php");
                         $menu="menuEmpleado.php";
                         break;
 
