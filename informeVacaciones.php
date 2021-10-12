@@ -1,3 +1,7 @@
+<?php
+require("conexionBD.php");  
+?>
+
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -33,9 +37,8 @@
             <select name="ftl" id="filtros" >
                 <option value="todos">Todos</option>
                     <?php
-                    require("conexionBD.php");// Para llamar la conexion de la base de datos.
-                    $sql = "SELECT UsuCedula, UsuNombre ,UsuApellido FROM tblusuario";
-                    $resultado = $conexion ->query($sql);
+                    $sqlfilter = "SELECT UsuCedula, UsuNombre ,UsuApellido FROM tblusuario";
+                    $resultado = $conexion ->query($sqlfilter);
                     foreach($resultado as $num_rows){
                     ?>    
                       <option value="<?php print $num_rows['UsuCedula'];?>"><?php echo $num_rows['UsuNombre']." " .$num_rows['UsuApellido'];?></option>
@@ -47,15 +50,15 @@
             <input type="date" name="DataSolicid">
             <table id="tablaResu" border="1">
                 <tr>
-                    <td>Empleado</td>
-                    <td>fecha solicitud</td>
-                    <td>Fecha de inicio</td>
-                    <td>fecha fin</td>
-                    <td>Estado</td>
+                    <th>Empleado</th>
+                    <th>fecha solicitud</th>
+                    <th>Fecha de inicio</th>
+                    <th>fecha fin</th>
+                    <th>Estado</th>
                 </tr>
-<?php
-/*$documento=$_POST["ftl"];
-echo $documento;*/
+                <?php
+//$documento=$_POST["ftl"];
+//echo $documento;
 if (empty($_POST["ftl"]) and empty($_POST["DataSolcid"])){
      $sql1="SELECT his.HisFechaSolicitud, his.HisFechaInicio, his.HisFechaRegreso, his.HisEstado, usu.UsuNombre, usu.UsuApellido FROM tblhistovaca his INNER JOIN tblusuario usu ON his.HisForUsuCed=usu.UsuCedula";
      $resultado1=$conexion ->query($sql1);     
@@ -73,12 +76,14 @@ if (empty($_POST["ftl"]) and empty($_POST["DataSolcid"])){
      ?>
      <?php
  }else{
+    $where="";
     $sql1="SELECT his.HisFechaSolicitud, his.HisFechaInicio, his.HisFechaRegreso, his.HisEstado, usu.UsuNombre, usu.UsuApellido FROM tblhistovaca his INNER JOIN tblusuario usu ON his.HisForUsuCed=usu.UsuCedula";
     $resultado1=$conexion ->query($sql1);
     
      }
 
 ?>
+
             </table>
             <br>
             <input type="submit" value="Consultar" id="botonEN" name="btn_consulta">
