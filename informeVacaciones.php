@@ -35,19 +35,19 @@ require("conexionBD.php");
         <form method="POST">
             <label for="empleado">Empleado</label>
             <select name="ftl" id="filtros" >
-                <option value="todos">Todos</option>
                     <?php
-                    $sqlfilter = "SELECT UsuCedula, UsuNombre ,UsuApellido FROM tblusuario";
+                    $sqlfilter = "SELECT UsuCedula, UsuNombre, UsuApellido FROM tblusuario";
                     $resultado = $conexion ->query($sqlfilter);
                     foreach($resultado as $num_rows){
                     ?>    
-                      <option value="<?php print $num_rows['UsuCedula'];?>"><?php echo $num_rows['UsuNombre']." " .$num_rows['UsuApellido'];?></option>
+                      <option value="<?php $document=$num_rows['UsuCedula'];?>"><?php echo $num_rows['UsuNombre']." " .$num_rows['UsuApellido'];?></option>
                      <?php     
                     }
                     ?>
                 </select>
-            <label for="fechaSolicitud">Fecha de solicitud vacaciones</label>
-            <input type="date" name="DataSolicid">
+            <input type="submit" value="Consultar" id="botonEN" name="btn_consulta">
+            <input type="submit" value="Imprimir" id="botonEN">
+        </form>
             <table id="tablaResu" border="1">
                 <tr>
                     <th>Empleado</th>
@@ -57,39 +57,37 @@ require("conexionBD.php");
                     <th>Estado</th>
                 </tr>
                 <?php
-//$documento=$_POST["ftl"];
-//echo $documento;
-if (empty($_POST["ftl"]) and empty($_POST["DataSolcid"])){
-     $sql1="SELECT his.HisFechaSolicitud, his.HisFechaInicio, his.HisFechaRegreso, his.HisEstado, usu.UsuNombre, usu.UsuApellido FROM tblhistovaca his INNER JOIN tblusuario usu ON his.HisForUsuCed=usu.UsuCedula";
-     $resultado1=$conexion ->query($sql1);     
-     foreach($resultado1 as $rows){
-         ?>
-         <tr>
-         <td><?php echo $rows['UsuNombre']. ' '.$rows['UsuApellido'];?></td>
-         <td><?php echo $rows['HisFechaSolicitud'];?></td>
-         <td><?php echo $rows['HisFechaInicio'];?></td>
-         <td><?php echo $rows['HisFechaRegreso'];?></td>
-         <td><?php echo $rows['HisEstado'];?></td>
-         </tr>
-         <?php
-     }
-     ?>
-     <?php
- }else{
-    $where="";
-    $sql1="SELECT his.HisFechaSolicitud, his.HisFechaInicio, his.HisFechaRegreso, his.HisEstado, usu.UsuNombre, usu.UsuApellido FROM tblhistovaca his INNER JOIN tblusuario usu ON his.HisForUsuCed=usu.UsuCedula";
-    $resultado1=$conexion ->query($sql1);
-    
-     }
+$whereFilter="";
+if (isset($_POST['btn_consulta'])) {
+    if (!empty($_POST['ftl']) and !empty($_)) {
+        
+    }
+}
+$sql1="SELECT his.HisFechaSolicitud, his.HisFechaInicio, his.HisFechaRegreso, his.HisEstado, usu.UsuNombre, usu.UsuApellido FROM tblhistovaca his INNER JOIN tblusuario usu ON his.HisForUsuCed=usu.UsuCedula $whereFilter";
+$resultado1=$conexion ->query($sql1);
+    foreach($resultado1 as $rows){
+        ?>
+        <tr>
+        <td><?php echo $rows['UsuNombre']. ' '.$rows['UsuApellido'];?></td>
+        <td><?php echo $rows['HisFechaSolicitud'];?></td>
+        <td><?php echo $rows['HisFechaInicio'];?></td>
+        <td><?php echo $rows['HisFechaRegreso'];?></td>
+        <td><?php echo $rows['HisEstado'];?></td>
+        </tr>
+        <?php
+    }
 
+     ?>
+     <?php   
+     echo $sql1 ."<br>";
+     echo $whereFilter ."<br>";
+     echo $_POST["ftl"] ."Este es el post <br>";
+     echo $documentPeople ."Este es la variable que contiene el documento del POST <br>";
+     echo $document ."Este es el documento desde el filtro";
 ?>
+<a href="vacaciInforme.php"></a>
 
             </table>
-            <br>
-            <input type="submit" value="Consultar" id="botonEN" name="btn_consulta">
-            <input type="submit" value="Imprimir" id="botonEN">
-        </form>
-
     </div>
     </div>
 </body>
