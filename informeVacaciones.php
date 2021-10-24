@@ -85,7 +85,7 @@ $resultado1=$conexion ->query($sql1);
      echo $documentPeople ."Este es la variable que contiene el documento del POST <br>";
      echo $document ."Este es el documento desde el filtro";
 ?>
-<a href="vacaciInforme.php"></a>
+<a href="vacaciInforme.php">Informe Vacaciones</a>
 
             </table>
     </div>

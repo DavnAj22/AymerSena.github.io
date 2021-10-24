@@ -1,8 +1,12 @@
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #D0CECE;
+    background: linear-gradient(#D0CECE, black 150%);
     background-attachment: fixed, scroll;
     background-repeat: no-repeat, repeat-y;
+}
+
+#titleTable {
+    text-align: center;
 }
 
 #animacion {
@@ -137,7 +141,18 @@ div#Post select {
     border: solid 3px blue;
 }
 
+th {
+    background-color: #34495E;
+    color: white;
+}
+
 #tablaResu {
     border: solid 3px blue;
     background-color: white;
+    text-align: center;
+}
+
+#contenedorText {
+    color: black;
+    background: linear-gradient(#000046, #1cb5e0);
 }
