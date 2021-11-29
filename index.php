@@ -20,7 +20,8 @@
             <input type="text" placeholder="Usuario" name="Usuario"><br><br>
             <input type="password" placeholder="Contrasena" name="Contrasena"><br><br>
             <button id="boton" type="submit" name="Iniciarsesion">Iniciar sesión</button><br><br>
-            <p>Restablecer contraseña</p>
+            <button id="boton1" type="submit" name="resContraseña">Restablecer contraseña</button><br><br>
+            
         
         </form>
     </section>
