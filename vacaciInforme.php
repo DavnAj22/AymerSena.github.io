@@ -82,4 +82,6 @@ foreach($answTableSql as $rowsTable){
 </blockquote>
 
 </body>
+
+}
 </html>

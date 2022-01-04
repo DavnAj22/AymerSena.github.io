@@ -41,9 +41,9 @@ body:before {
 #boton {
     font-family: "Raleway";
     background: rgb();
-    border: none;
+    border: solid 1px blue;
     display: block;
-    width: 40%;
+    width: 200px;
     margin: 10px auto;
     border-radius: 40px;
     height: 20px;
@@ -51,6 +51,7 @@ body:before {
 }
 
 #boton1 {
+    border: solid 1px blue;
     display: inline-block;
     padding: 15px;
     background-color: #000;
@@ -64,6 +65,10 @@ body:before {
 }
 
 #boton1:hover {
-    background-color: rgb(236, 253, 0);
-    color: #000;
+    background-color: #002135;
+    color: #fff;
+}
+
+input {
+    border: solid 1px blue;
 }
