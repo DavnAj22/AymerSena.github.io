@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/disMenuInformes.css">
-    <title>Menu informes</title>
+    <link rel="stylesheet" href="CSS/disInfoNomina.css">
+    <title>Plantilla para proyecto unix</title>
 </head>
 
 <body>
@@ -22,12 +22,12 @@
             </nav>
         </div>
         <div class="titlePag">
-            <h1>Menú de informes</h1>
+            <h1>Informe de nomina.</h1>
         </div>
         <div class="container">
-            <button class="buttonCont" onclick="location.href='informeNomina.php'">Nomina</button>
-            <button class="buttonCont" onclick="location.href='vacaciInforme.php'">Informe de vacaciones</button>
-            <button class="buttonCont" onclick="location.href='infoResulEvalua.php'">Resultados evaluativos</button>
+            <div class="subcontenido">
+            <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit. Iure maxime suscipit tempora, cupiditate vel aspernatur? Commodi quibusdam hic, animi, maiores, libero corrupti officia necessitatibus temporibus labore saepe tempora quod nulla.</p>
+            </div>
             <img src="https://1.bp.blogspot.com/-CRGFBvE8s8k/YT5yRhIEj8I/AAAAAAAAAHM/dplt4qgxJmcjfSP213rWRyF0EoW_BQlSACNcBGAsYHQ/s332/logoPag.png" id="logoUnix">
         </div>
     </div>
