@@ -31,6 +31,9 @@ if (move_uploaded_file($_FILES['subir_archivo']['tmp_name'], $subir_archivo)) {
        echo "La subida ha fallado";
     }
     echo "</div>";
+    require("conexionBD.php");
+    $docuFuncioLogueado=1110000001; ///Esta variable le hace falta capturar el documento del funcionario logueado por el momento se pone manual.
+    $query=$conexion->query("UPDATE tblusuario SET UsuFotoPerfil ='$subir_archivo' WHERE UsuCedula ='$docuFuncioLogueado'");
 ?>
 <br>
 <div style="border:1px solid #000000; text-transform:uppercase">  

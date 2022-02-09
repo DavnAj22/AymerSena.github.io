@@ -10,11 +10,19 @@
 </head>
 
 <body>
+<?php 
+                    require("conexionBD.php");
+                    $documentoFunLoguea=1110000001;/// Esta variable debe capturar quien se logueo por el momento se pone manual.
+                    $query=$conexion->query("SELECT * FROM tblusuario WHERE UsuCedula='$documentoFunLoguea'");
+                    while ($row = $query->fetch_assoc()) {
+                        $return = $row['UsuFotoPerfil'];
+                    }
+                    ?>
 <div class="cuerpo">
         <div class="panelLeft">
             <nav>
                 <ul>
-                    <li><a href="photoPerfil.php"><img src="https://1.bp.blogspot.com/-MeCxaLO8njU/YT5yRMu7KrI/AAAAAAAAAHI/NhoZIlmquMUWDoiVjAzF3nTF1WnwqRTSQCNcBGAsYHQ/s0/descarga.png" id="photoPer"></a></li>
+                    <li><a href="photoPerfil.php"><img src="<?php echo $return; ?>" id="photoPer"></a></li>
                     <li> <img src="https://1.bp.blogspot.com/-EO10WM7B0Ig/YT5yOT5S7JI/AAAAAAAAAGw/FfqaAQ19Y709UTCC9jBUt7CW9pEv8_xjACNcBGAsYHQ/s0/IconoNotificaciones.png" id="photoNoti"></li>
                     <li><button>Gestion contraseña</button></li>
                     <li><button>Cerrar sesión</button></li>
