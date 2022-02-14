@@ -17,6 +17,9 @@
                     while ($row = $query->fetch_assoc()) {
                         $return = $row['UsuFotoPerfil'];
                     }
+                    if ($return==NULL){
+                        $return="https://1.bp.blogspot.com/-MeCxaLO8njU/YT5yRMu7KrI/AAAAAAAAAHI/NhoZIlmquMUWDoiVjAzF3nTF1WnwqRTSQCNcBGAsYHQ/s0/descarga.png";
+                    }
                     ?>
 <div class="cuerpo">
         <div class="panelLeft">
