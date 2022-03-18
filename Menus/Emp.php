@@ -1,5 +1,4 @@
-<?php include('../template/cabecera.php');
-include('../CSS/menus.css'); ?>
+<?php require('../Template/cabecera.php'); ?>
 
 <div class="titlePag">
     <h1>Titulo de la página va acá</h1>
@@ -35,4 +34,4 @@ include('../CSS/menus.css'); ?>
     </div>
     <img src="https://1.bp.blogspot.com/-CRGFBvE8s8k/YT5yRhIEj8I/AAAAAAAAAHM/dplt4qgxJmcjfSP213rWRyF0EoW_BQlSACNcBGAsYHQ/s332/logoPag.png" id="logoUnix" />
 </div>
-<?php include('../template/cabecera.php'); ?>
+<?php include('../Template/pie.php'); ?>
