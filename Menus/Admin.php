@@ -1,6 +1,9 @@
 <?php include('../template/cabecera.php');
-include('../CSS/menus.css'); ?>
-<?php
+include('../CSS/menus.css');
+session_start();
+if (!isset($SESSION["Admin"])) {
+    header("Location: index.php");
+}
 require("conexionBD.php");
 $documentoFunLoguea = 1110000001; /// Esta variable debe capturar quien se logueo por el momento se pone manual.
 $query = $conexion->query("SELECT * FROM tblusuario WHERE UsuCedula='$documentoFunLoguea'");

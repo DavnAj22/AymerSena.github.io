@@ -30,41 +30,52 @@
 <?php
 require("conexionBD.php");
 if (isset($_POST['Iniciarsesion'])) {
-    $id = $_POST['id'];
-    $pass = $_POST['passw'];
+    $id = htmlentities(addslashes($_POST['id']));
+    $passw = htmlentities(addslashes($_POST['passw']));
     if (isset($_POST["id"])) {
         if (!empty($_POST["id"]) && strlen($_POST["id"]) <= 15 && is_numeric($_POST["id"]) && !preg_match("/[0-9]/", $_POST["id"])) {
         }
     }
     if (!empty($_POST["passw"])) {
     }
-    $sql = "SELECT * FROM tblusuario WHERE UsuCedula='$id'";
-    $resulpassword = $conexion->query($sql);
+    $sqlid = "SELECT * FROM tblusuario WHERE UsuCedula='$id'";
+    $resulpassword = $conexion->query($sqlid);
     foreach ($resulpassword as $rows) {
-        if ($rows['UsuContrasenaSis'] == $passw) {
-            $resulperfil = $conexion->query($sql);
-            foreach ($resulperfil as $rows) {
-                switch ($rows["UsuForaPerfil"]) {
-                    case 1:
-                        header("Location: menuAdministrador.php");
-                        $menu = "menuAdministrador.php";
-                        break;
-                    case 2:
-                        header("Location: menuJefe.php");
-                        $menu = "menuJefe.php";
-                        break;
-                    case 3:
-                        header("Location: menuEmpleado.php");
-                        $menu = "menuEmpleado.php";
-                        break;
+        $sqlidexist = "SELECT COUNT(*) FROM tblusuario WHERE UsuCedula= '$id'";
+        $usuexist = $conexion->query($sqlidexist);
+        if ($usuexist->fetch_column() > 0) {
+            if ($rows['UsuContrasenaSis'] == $passw) {
+                $resulperfil = $conexion->query($sqlid);
+                foreach ($resulperfil as $rows) {
+                    switch ($rows["UsuForaPerfil"]) {
+                        case 1:
+                            session_start();
+                            $_SESSION["Admin"] = $_POST['id'];
+                            header("Location: /Menus/Admin.php");
+                            break;
+                        case 2:
+                            session_start();
+                            $_SESSION["Emp"] = $_POST['id'];
+                            header("Location: /Menus/Jefe.php");
+                            break;
+                        case 3:
+                            session_start();
+                            $_SESSION["Jefe"] = $_POST['id'];
+                            header("Location: /Menus/Emp.php");
+                            break;
 
-                    default:
-                        echo "No perfil";
-                        break;
+                        default:
+                            echo "No tiene un perfil asignado, comuniquese con el administrador";
+                            break;
+                    }
                 }
+            } else {
+                echo "La contraseña digitada es incorrecta";
+                header("Location: index.php");
             }
         } else {
-            echo "Credenciales incorrectas";
+            echo "El usuario no esta registrado";
+            header("Location: index.php");
         }
     }
 }

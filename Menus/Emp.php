@@ -1,11 +1,11 @@
-<?php require('../Template/cabecera.php'); ?>
-
-<div class="titlePag">
-    <h1>Titulo de la página va acá</h1>
-</div>
+<?php require('../Template/cabecera.php');
+/*session_start();
+if (!isset($SESSION["Emp"])) {
+    header("Location: index.php");
+}*/
+?>
 <div class="container">
     <div id="Menu">
-        <h1 id="tit">¿Que deseas hacer?</h1>
         <nav id="Logos">
             <ul>
                 <li>

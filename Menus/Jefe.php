@@ -1,7 +1,10 @@
-<?php include('../template/cabecera.php'); ?>
-<div class="titlePag">
-    <h1>Titulo de la página va acá</h1>
-</div>
+<?php include('../template/cabecera.php');
+session_start();
+if (!isset($SESSION["Jefe"])) {
+    header("Location: index.php");
+}
+?>
+
 <div class="container">
 
     <div id="Menu">
