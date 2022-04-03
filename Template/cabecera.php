@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../CSS/template.css">
     <link rel="stylesheet" href="template.css">
     <link rel="stylesheet" href="../CSS/changepassw.css">
+    <link rel="stylesheet" href="../CSS/submenu.css">
 </head>
 
 <body>
@@ -30,7 +31,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../datosbasicos.php">
                         <span class="icon">
                             <ion-icon name="person-outline"></ion-icon>
                         </span>
@@ -38,7 +39,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../submenucddocs.php">
                         <span class="icon">
                             <ion-icon name="document-attach-outline"></ion-icon>
                         </span>
@@ -46,7 +47,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../submenuvacaciones.php">
                         <span class="icon">
                             <ion-icon name="airplane-outline"></ion-icon>
                         </span>
@@ -54,7 +55,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../submenuevalu.php">
                         <span class="icon">
                             <ion-icon name="clipboard-outline"></ion-icon>
                         </span>
@@ -62,7 +63,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../submenuinfor.php">
                         <span class="icon">
                             <ion-icon name="stats-chart-outline"></ion-icon>
                         </span>
