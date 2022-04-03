@@ -1,11 +1,14 @@
-<?php require('../Template/cabecera.php');
-/*session_start();
-if (!isset($SESSION["Emp"])) {
-    header("Location: index.php");
-}*/
+<?php include('../Template/cabecera.php');
+session_start();
+if (!isset($SESSION["Jefe"])) {
+    header("Location: ../index.php");
+}
 ?>
+
 <div class="container">
+
     <div id="Menu">
+        <h1 id="tit">¿Que deseas hacer?</h1>
         <nav id="Logos">
             <ul>
                 <li>
@@ -24,7 +27,7 @@ if (!isset($SESSION["Emp"])) {
                     <a href="evaluarEmp.html"><img class="logo" src="https://1.bp.blogspot.com/-Zxks8ycBOc0/YT5yM4bZqzI/AAAAAAAAAGk/WdnOOm982uULk6R7qeFviWx68IABXBDcQCNcBGAsYHQ/s0/IconoEvaluaciones.png"></a>
                 </li>
                 <li>
-                    <a href="AprobarVacaciones.html"><img class="logo" src="https://1.bp.blogspot.com/-ajVBdcodOK4/YUVt7StZMoI/AAAAAAAAAHw/AIybbv4b0DMa26b1cmL4u4Pi4rJLQcT0ACNcBGAsYHQ/s0/aprobvACAS-removebg-preview.png"></a>
+                    <a href="VistoBueno.html"><img class="logo" src="https://1.bp.blogspot.com/-CBDJAQ-UHsw/YT5yQQfp80I/AAAAAAAAAHA/wDve7hRolmMfYVJs8pvtDXC8VJrwbHpNwCNcBGAsYHQ/s0/IconoVistoBuenoVaca.png"></a>
                 </li>
                 <li>
                     <a href="menuInformes.php"><img class="logo" src="https://1.bp.blogspot.com/-zNm1SxTs37c/YT5yN-a4IwI/AAAAAAAAAGs/ya7hx4ayapcuP53sZUm-XyRiY27bjjnIACNcBGAsYHQ/s0/IconoInformes.png"></a>

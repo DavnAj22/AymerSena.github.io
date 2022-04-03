@@ -21,8 +21,6 @@
             <input type="password" placeholder="Password" name="passw" required="true"><br><br>
             <button id="boton" type="submit" name="Iniciarsesion">Iniciar sesión</button><br><br>
             <button id="boton1" type="submit" name="respassword">Restablecer contraseña</button><br><br>
-
-
         </form>
     </section>
 
@@ -50,18 +48,18 @@ if (isset($_POST['Iniciarsesion'])) {
                     switch ($rows["UsuForaPerfil"]) {
                         case 1:
                             session_start();
-                            $_SESSION["Admin"] = $_POST['id'];
-                            header("Location: /Menus/Admin.php");
+                            $_SESSION["Admin"] = $_POST["id"];
+                            header("Location: Admin.php");
                             break;
                         case 2:
                             session_start();
-                            $_SESSION["Emp"] = $_POST['id'];
-                            header("Location: /Menus/Jefe.php");
+                            $_SESSION["Jefe"] = $_POST["id"];
+                            header("Location: Jefe.php");
                             break;
                         case 3:
-                            session_start();
-                            $_SESSION["Jefe"] = $_POST['id'];
-                            header("Location: /Menus/Emp.php");
+                            /**session_start();
+                            $_SESSION["Emp"] = $_POST["id"];**/
+                            header("Location: Emp.php");
                             break;
 
                         default:

@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../CSS/template.css">
+    <link rel="stylesheet" href="template.css">
+    <link rel="stylesheet" href="../CSS/changepassw.css">
 </head>
 
 <body>
@@ -68,7 +70,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../changepassw.php">
                         <span class="icon">
                             <ion-icon name="lock-closed-outline"></ion-icon>
                         </span>
@@ -92,6 +94,6 @@
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
                 <div class="title">
-                    <h1>Title</h1>
+                    <h1>Menu empleado</h1>
                 </div>
             </div>
