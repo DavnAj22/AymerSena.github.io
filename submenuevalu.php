@@ -1,11 +1,12 @@
 <?php include('Template/cabecera.php'); ?>
 <div class="sub">
     <ul>
-        <!--Evaluaciones-->
-        <li class="menus"><a href="">
+        <!--Crear medios evaluativos-->
+        <li class="menus"><a href="crear_evaluacion.php">
                 <ion-icon class="subicon" name="clipboard-outline"></ion-icon>
             </a></li>
-        <li class="menus"><a href="">
+        <!--Evaluar empleado-->
+        <li class="menus"><a href="evaluarEmp.php">
                 <ion-icon class="subicon" name="pencil-outline"></ion-icon><a></li>
     </ul>
 </div>
