@@ -59,7 +59,7 @@ if (isset($_POST['Iniciarsesion'])) {
                         case 3:
                             /**session_start();
                             $_SESSION["Emp"] = $_POST["id"];**/
-                            header("Location: mempñe.php");
+                            header("Location: memple.php");
                             break;
 
                         default:
