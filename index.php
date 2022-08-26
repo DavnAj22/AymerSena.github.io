@@ -49,17 +49,17 @@ if (isset($_POST['Iniciarsesion'])) {
                         case 1:
                             session_start();
                             $_SESSION["Admin"] = $_POST["id"];
-                            header("Location: Admin.php");
+                            header("Location: madmin.php");
                             break;
                         case 2:
                             session_start();
                             $_SESSION["Jefe"] = $_POST["id"];
-                            header("Location: Jefe.php");
+                            header("Location: mjefe.php");
                             break;
                         case 3:
                             /**session_start();
                             $_SESSION["Emp"] = $_POST["id"];**/
-                            header("Location: Emp.php");
+                            header("Location: mempñe.php");
                             break;
 
                         default:
