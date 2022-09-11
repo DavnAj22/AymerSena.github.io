@@ -2,28 +2,46 @@ div#Menu {
   position: relative;
   width: 100%;
   margin: auto;
-  margin-top: 150px;
 }
 
 #title {
-  position: absolute;
-  display: inline;
+  margin: 20px;
 }
 
-#logos {
-  position: inherit;
-  width: 100%;
+#logonav {
+  position: relative;
+  width: 90%;
   height: 50%;
   margin-top: 7%;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
 }
 
 #logos ul {
-  display: inline-block;
-  list-style: none;
+  display: none;
+  display: flex;
+
 }
 
 #logos ul li {
-  display: inline-block;
+  position: relative;
+  list-style: none;
+}
+
+#logos ul li a{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+a .logito ion-icon{
+  font-size: 200px;
+}
+a .icontittle{
+  position: absolute;
 }

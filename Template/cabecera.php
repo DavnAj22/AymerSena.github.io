@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../CSS/template.css">
-    <link rel="stylesheet" href="template.css">
-    <link rel="stylesheet" href="../CSS/changepassw.css">
-    <link rel="stylesheet" href="../CSS/submenu.css">
+    <link rel="stylesheet" href="CSS/template.css">
+    <link rel="stylesheet" href="CSS/changepassw.css">
+    <link rel="stylesheet" href="CSS/submenu.css">
+    <link rel="stylesheet" href="CSS/menus.css">
 </head>
 
 <body>
@@ -79,7 +79,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="../logout.php">
+                    <a href="logout.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                             </ion-icon>
@@ -95,6 +95,6 @@
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
                 <div class="title">
-                    <h1>Menu empleado</h1>
+                    <h1>Unix Storngest</h1>
                 </div>
             </div>
