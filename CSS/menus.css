@@ -20,18 +20,17 @@ div#Menu {
   align-items: center;
 }
 
-#logos ul {
-  display: none;
+#logonav ul {
   display: flex;
 
 }
 
-#logos ul li {
+#logonav ul li {
   position: relative;
   list-style: none;
 }
 
-#logos ul li a{
+#logonav ul li a{
   position: relative;
   display: flex;
   justify-content: center;
@@ -42,6 +41,4 @@ div#Menu {
 a .logito ion-icon{
   font-size: 200px;
 }
-a .icontittle{
-  position: absolute;
-}
+

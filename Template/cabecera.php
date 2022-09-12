@@ -17,10 +17,12 @@
         <div class="navigation">
             <ul>
                 <li>
-                    <div class="photousu">
-                        <img src="https://c.tenor.com/XQXzBqs3utEAAAAd/marin-kitagawa.gif" alt="">
-                    </div>
-                    <span class="user_name">User name</span>
+                    <a href="photoPerfil.php">
+                        <div class="photousu">
+                            <img src="https://c.tenor.com/XQXzBqs3utEAAAAd/marin-kitagawa.gif" alt="">
+                        </div>
+                        <span class="user_name">User name</span>
+                    </a>
                 </li>
                 <li>
                     <a href="#">
